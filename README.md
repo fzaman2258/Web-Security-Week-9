@@ -46,7 +46,7 @@ Vulnerability #1: Cross-Site Scripting(XSS)
 	1) Go to the URL https://35.184.88.145/green/public/contact.php
 	2) Enter any javascript into the feedback section
 	   I used:
-	   **<script>alert("Farhan has discovered an explot")</script>**
+	   **<script>alert("Farhan has discovered an exploit")</script>**
 	3) Click submit
 	4) Use the credentials **pperson** and password **StaR!49*whiz** to login
 	5) Click feedback and there will be a popup with the alert from the script
