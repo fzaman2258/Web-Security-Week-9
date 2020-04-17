@@ -20,13 +20,13 @@ Each version of the site has been given two of the six vulnerabilities. (In othe
 ## Blue
 
 Vulnerability #1: SQL Injection(SQLi)
-- [ ] GIF Walkthrough: ![](./SQL Injection.gif)
+- [ ] GIF Walkthrough: ![](./SQLInjection.gif)
 - [ ] Steps to recreate:
 	1) Go to the URL https://35.184.88.145/blue/public/salesperson.php?id=1
 	2) Change the ID parameter value to **'OR 1=1' --**
 
 Vulnerability #2: Session Hijacking/Fixation
-- [ ] GIF Walkthrough: ![](./Session Hijacking.gif)
+- [ ] GIF Walkthrough: ![](./SessionHijacking.gif)
 - [ ] Steps to recreate:
 	1) Go to the URL https://35.184.88.145/blue/public/staff/login.php
 	2) Use the credentials **pperson** and password **StaR!49*whiz** to login
@@ -39,7 +39,7 @@ Vulnerability #2: Session Hijacking/Fixation
 ## Green
 
 Vulnerability #1: Cross-Site Scripting(XSS)
-- [ ] GIF Walkthrough: ![](./Cross-Site Scripting.gif)
+- [ ] GIF Walkthrough: ![](./Cross-SiteScripting.gif)
 - [ ] Steps to recreate:
 	1) Go to the URL https://35.184.88.145/green/public/contact.php
 	2) Enter any javascript into the feedback section
@@ -50,7 +50,7 @@ Vulnerability #1: Cross-Site Scripting(XSS)
 	5) Click feedback and there will be a popup with the alert from the script
 
 Vulnerability #2: Username Enumeration
-- [ ] GIF Walkthrough: ![](./User Enumeration.gif)
+- [ ] GIF Walkthrough: ![](./UserEnumeration.gif)
 - [ ] Steps to recreate:
 	1) Go to the URL https://35.184.88.145/green/public/contact.php
 	2) Enter an existing username and wrong password
@@ -70,7 +70,7 @@ Vulnerability #1: Insecure Direct Object Reference(IDOR)
 	3) Change the ID parameter value to 10
 
 Vulnerability #2: Cross-Site Request Forgery(CSRF)
-- [ ] GIF Walkthrough: ![](./Cross-Site Request Forgery.gif)
+- [ ] GIF Walkthrough: ![](./Cross-SiteRequestForgery.gif)
 - [ ] Steps to recreate:
 	1) Go to the URL https://35.184.88.145/green/public/contact.php
 	2) Use the credentials **pperson** and password **StaR!49*whiz** to login
