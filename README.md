@@ -24,6 +24,7 @@ Vulnerability #1: SQL Injection(SQLi)
 - [ ] Steps to recreate:
 	1) Go to the URL https://35.184.88.145/blue/public/salesperson.php?id=1
 	2) Change the ID parameter value to **'OR 1=1' --**
+- [ ] Comments: Changing the ID value casuses a Database Query Failure on the blue site, not the rest.
 
 Vulnerability #2: Session Hijacking/Fixation
 - [ ] GIF Walkthrough: ![](./SessionHijacking.gif)
@@ -35,6 +36,7 @@ Vulnerability #2: Session Hijacking/Fixation
 	   and change this browser's session ID to the one from step 3
 	5) Go to the URL https://35.184.88.145/blue/public/staff/login.php in the browser from step number 4 and
 	   verify that you are logged in
+- [ ] Comments: Using the same Session ID on a different browser, or even incognito will allow you to login to the account the other broswer is using, while the other sites don't.
 
 ## Green
 
@@ -48,6 +50,7 @@ Vulnerability #1: Cross-Site Scripting(XSS)
 	3) Click submit
 	4) Use the credentials **pperson** and password **StaR!49*whiz** to login
 	5) Click feedback and there will be a popup with the alert from the script
+- [ ] Comments: This site runs javascript code causing an XSS vulnerability, while the others don't.
 
 Vulnerability #2: Username Enumeration
 - [ ] GIF Walkthrough: ![](./UserEnumeration.gif)
@@ -59,6 +62,7 @@ Vulnerability #2: Username Enumeration
 	3) Enter a non-existing username and wrong password
 	   I used:
 	   **pperson12** and password is **123**
+- [ ] Comments: When inputting an existing username, this site bolds the error message **Log in was unsuccessful**, while when inputting a non-existing username the site just returns Log in was unsuccessful un-bolded. The other sites don't do this.
 
 ## Red
 
@@ -67,7 +71,8 @@ Vulnerability #1: Insecure Direct Object Reference(IDOR)
 - [ ] Steps to recreate:
 	1) Go to the URL https://35.184.88.145/red/public/territories.php
 	2) Click on any salesperson
-	3) Change the ID parameter value to 10
+	3) Change the ID parameter value to **10**
+- [ ] Comments: Change the ID value to 10 will show a salesperson who shouldn't be available to the public until September 1, while the other sites don't display this.
 
 Vulnerability #2: Cross-Site Request Forgery(CSRF)
 - [ ] GIF Walkthrough: ![](./Cross-SiteRequestForgery.gif)
@@ -80,9 +85,10 @@ Vulnerability #2: Cross-Site Request Forgery(CSRF)
 	6) Edit the values to anything you want
 	7) Click update and the changes will go through
 	8) If you try this on other browsers you will get an error.
+- [ ] Comments: When editing information about a user, you can change the csrf_token and still update the values in the form normally, however the other sites return **Error: Invalid Request.**.
 
 ## Notes
 
 Describe any challenges encountered while doing the work:
-No challenges in particular, just figuring out how to reload the blue website when changing session ID was a bit annoying.
+- [ ] No challenges in particular, just figuring out how to reload the blue website when changing session ID was a bit annoying.
 Instead of refreshing, I had to click public, then login for it to work.
